@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My jQuery Assignment</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#add').click(function(){
+                $('.area:first-of-type p').addClass('red')
+            })
+            $('img').hide();
+            $('#show').click(function(){
+                $('.area:nth-of-type(3) img').show();
+            })
+            $('#hide').click(function(){
+                $('.area:nth-of-type(3) img').hide();
+            })
+            $('#slideD').click(function(){
+                $('.area:nth-of-type(3) img').slideDown();
+            })
+            $('#slideU').click(function(){
+                $('.area:nth-of-type(3) img').slideDown();
+            })
+            $('#slideT').click(function(){
+                $('.area:nth-of-type(2) img').slideToggle();
+            })
+            $('#addP').click(function(){
+                $('.area:nth-of-type(4) p').append(' Meme')
+            })
+            $('#fadeI').click(function(){
+                $('.area:nth-of-type(5) img').fadeIn();
+            })
+            $('#fadeO').click(function(){
+                $('.area:nth-of-type(5) img').fadeOut();
+            })
+            $('#tog').toggle(function(){
+                addClass('red');}, 
+                function(){
+                addClass('blue');
+            })
+            $('#here').hover(function(){
+                $('#here').before('<--')
+            })
+            $('#there').hover(function(){
+                $('#there').after('-->')
+            })
+            $('#clickH').click(function(){
+                $('#clickH').html("<p>Wow. <em>Kill 'em</em></p>");
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="area">
+        <h1>Add Class</h1>
+        <button id="add">Add Class</button>
+        <p>Click the button to add the "red" class to this text</p>
+    </div>
+    <div class="area">
+        <h1>Slide Toggle</h1>
+        <button id="slideT">Slide Toggle</button>
+        <p>Click the button to show a hidden img</p>
+        <img src="img.jpg" alt="image">
+    </div>
+    <div class="area">
+        <h1>Slide Up</h1>
+        <button id="show">Show</button>
+        <button id="hide">Hide</button>
+        <button id="slideD">Slide Down</button>
+        <button id="slideU">Slide Up</button>
+        <p>Click the buttons to slide the image up and down</p>
+        <img src="img.jpg" alt="image">
+    </div>
+    <div class="area">
+        <h1>Add Paragraph</h1>
+        <button id="addP">Add Paragraph</button>
+        <p>Click the button to add another paragraph</p>
+    </div>
+    <div class="area">
+            <h1>Fade In</h1>
+            <button id="fadeI">Fade In</button>
+            <button id="fadeO">Fade Out</button>
+            <p>Click the buttons to fade the image in and out</p>
+            <img src="img.jpg" alt="image">
+    </div>
+    <div class="area">
+            <h1>Toggle</h1>
+            <button id="tog">Toggle</button>
+            <p>Click to Turn on or off</p>
+    </div>
+    <div class="area">
+            <h1>Before & After</h1>
+            <p id="here">Hover here</p>
+            <p id="there">Hover there</p>
+    </div>
+    <div class="area">
+            <h1>HTML</h1>
+            <p id="clickH">Click here</p>
+    </div>
+</body>
+</html>

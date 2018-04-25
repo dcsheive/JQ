@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> </title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('tbody').append('<tr>');
+                var fname = $('#first_name').val(), lname = $('#last_name').val(),email = $('#email').val(),phone = $('#phone').val()
+                $('tbody tr:last-of-type').append('<td>'+fname+'</td>'+'<td>'+lname+'</td>'+'<td>'+email+'</td>'+'<td>'+phone+'</td>')
+                return false;
+            })
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><h3>First Name</h3></th>
+                <th><h3>Last Name</h3></th>
+                <th><h3>Email Address</h3></th>
+                <th><h3>Contact #</h3></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div>
+        <h1>Add User</h1>
+        <form action="">
+            First Name: <input type="text" id="first_name" placeholder="First Name">
+            Last Name: <input type="text" id="last_name" placeholder="Last Name">
+            Email: <input type="text" id="email" placeholder="Email Address">
+            Contact #: <input type="text" id="phone" placeholder="Phone #">
+        </form>
+        <button>Add User</button>
+    </div>
+</body>
+</html>

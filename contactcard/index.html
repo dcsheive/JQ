@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> </title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('p:last-of-type').hide();
+            $(document).on("click", "#add", function(){
+                var fname = $('#first_name').val(), lname = $('#last_name').val(), descVar = $('#descId').val()
+                var card='<div class="card"><h1>'+fname+' '+lname+'</h1><p>Click Here For Description!</p><p>'+descVar+'</p></div>'
+                $('#right').append(card);
+                $('p:last-of-type').hide();
+            });
+            $(document).on("click",'.card', function(){
+                if ($(this).children('p:last-of-type').is(':hidden')){
+                $(this).children().hide();
+                $(this).children('p:last-of-type').show();
+                }
+                else {
+                $(this).children().show();
+                $(this).children('p:last-of-type').hide();
+                }
+            })
+            $('#remove').click(function(){
+                $('.card:last').remove();
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="left">
+            <form>
+                First Name: <input type="text" id="first_name" placeholder="First Name">
+                Last Name: <input type="text" id="last_name" placeholder="Last Name">
+                Description: <textarea  id="descId" cols="30" rows="10" placeholder="Enter Description"></textarea>
+            </form>
+            <button id="add">Add User</button>
+            <button id="remove">Remove Cards</button>
+        </div>
+        <div id="right">
+            <div class="card">
+                <h1>Michael Choi</h1>
+                <p>Click Here For Description!</p>
+                <p>OUR FEARLESS LEADER</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
